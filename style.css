@@ -1,0 +1,150 @@
+/* ===== PALETA DE COLORES (variables) ===== */
+:root {
+  --verde: #16a34a;
+  --verde-oscuro: #15803d;
+  --azul-oscuro: #0f172a;
+  --naranja: #f97316;
+  --rojo: #ef4444;
+  --gris-claro: #f1f5f9;
+  --blanco: #ffffff;
+  --texto-suave: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: var(--blanco);
+  line-height: 1.6;
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== BARRA SUPERIOR ===== */
+.navbar { background: var(--azul-oscuro); padding: 18px 0; position: sticky; top: 0; }
+.navbar-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: var(--blanco); font-size: 1.5rem; }
+.logo strong { color: var(--verde); }
+.menu a { color: #cbd5e1; text-decoration: none; margin-left: 20px; }
+.menu a:hover { color: var(--blanco); }
+
+/* ===== PORTADA ===== */
+.hero { background: linear-gradient(135deg, var(--azul-oscuro), #1e3a5f); color: var(--blanco); padding: 70px 0 90px; }
+.hero h1 { font-size: 2.4rem; margin-bottom: 10px; }
+.hero h1 span { color: var(--verde); }
+.hero p { color: #cbd5e1; margin-bottom: 30px; }
+
+/* ===== BUSCADOR ===== */
+.buscador {
+  background: var(--blanco); border-radius: 12px; padding: 20px;
+  display: flex; gap: 15px; flex-wrap: wrap; align-items: flex-end;
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+.campo { flex: 1; min-width: 180px; }
+.campo label { display: block; font-size: .85rem; color: var(--texto-suave); margin-bottom: 6px; }
+.campo select, .campo input {
+  width: 100%; padding: 12px; border: 2px solid var(--gris-claro);
+  border-radius: 8px; font-size: 1rem; background: var(--blanco);
+}
+.campo select:focus, .campo input:focus { outline: none; border-color: var(--verde); }
+
+/* ===== BOTONES ===== */
+.btn-primario {
+  background: var(--verde); color: var(--blanco); border: none; padding: 13px 26px;
+  border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600;
+}
+.btn-primario:hover { background: var(--verde-oscuro); }
+.btn-primario.btn-ancho { width: 100%; }
+
+.btn-secundario {
+  background: transparent; color: var(--verde); border: 2px solid var(--verde);
+  padding: 10px 20px; border-radius: 8px; font-size: .95rem; cursor: pointer; font-weight: 600;
+}
+.btn-secundario:hover { background: var(--verde); color: var(--blanco); }
+
+/* ===== ETIQUETA DE DEMOSTRACIÓN ===== */
+.badge {
+  background: var(--naranja); color: var(--blanco); font-size: .75rem; font-weight: 600;
+  padding: 4px 10px; border-radius: 20px; margin-left: 8px; vertical-align: middle;
+}
+
+/* ===== SECCIONES ===== */
+.seccion { padding: 60px 0; }
+.seccion h2 { font-size: 1.8rem; margin-bottom: 25px; }
+.sub { color: var(--texto-suave); margin-bottom: 20px; }
+.fondo-claro { background: var(--gris-claro); }
+
+/* ===== TARJETAS DE RUTAS ===== */
+.grilla-rutas { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.tarjeta-ruta {
+  background: var(--blanco); border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;
+  transition: .2s; box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+.tarjeta-ruta:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,.12); }
+.tarjeta-ruta h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.tarjeta-ruta .duracion { color: var(--verde); font-weight: 700; }
+.tarjeta-ruta .precio { color: var(--naranja); font-weight: 700; }
+.tarjeta-ruta p { color: var(--texto-suave); font-size: .9rem; margin-top: 8px; }
+
+/* ===== RESULTADO ENCOMIENDA ===== */
+.resultado { background: var(--blanco); border-radius: 12px; padding: 25px; margin-top: 25px; border: 1px solid #e2e8f0; }
+.oculto { display: none; }
+.cabecera-resultado { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.estado {
+  background: var(--verde); color: var(--blanco); padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: .9rem;
+}
+.estado.retraso { background: var(--rojo); }
+.barra-progreso { height: 14px; background: var(--gris-claro); border-radius: 20px; overflow: hidden; margin-bottom: 20px; }
+.progreso-nivel { height: 100%; width: 0; background: var(--verde); border-radius: 20px; transition: width 1s ease; }
+#pasos { list-style: none; }
+#pasos li { padding: 6px 0 6px 24px; color: var(--texto-suave); position: relative; }
+#pasos li.hecho { color: var(--azul-oscuro); }
+#pasos li.hecho::before { content: "✔"; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+#pasos li.pendiente::before { content: "◌"; position: absolute; left: 0; color: var(--texto-suave); }
+
+/* ===== MAPA PROTOTIPO ===== */
+.mapa { margin-top: 30px; background: var(--blanco); border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: center; }
+.mapa p:first-child { font-weight: 700; margin-bottom: 15px; }
+.mapa small { color: var(--texto-suave); }
+.ruta-dibujo { display: flex; align-items: center; gap: 5px; margin: 15px 0; }
+.punto {
+  background: var(--azul-oscuro); color: var(--blanco); border-radius: 8px; padding: 8px 12px; font-size: .8rem; white-space: nowrap;
+}
+.punto.fin { background: var(--naranja); }
+.linea { flex: 1; height: 4px; background: #cbd5e1; position: relative; }
+.bus-moviendo { position: absolute; top: -13px; animation: mover 4s ease-in-out infinite; font-size: 1.2rem; }
+@keyframes mover { 0% { left: 0; } 50% { left: calc(100% - 25px); } 100% { left: 0; } }
+
+/* ===== TABLA HORARIOS ===== */
+.tabla { width: 100%; border-collapse: collapse; background: var(--blanco); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,.06); }
+.tabla th, .tabla td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--gris-claro); }
+.tabla th { background: var(--azul-oscuro); color: var(--blanco); }
+.tabla tr:hover td { background: var(--gris-claro); }
+
+/* ===== PIE DE PÁGINA ===== */
+.footer { background: var(--azul-oscuro); color: #cbd5e1; text-align: center; padding: 30px 0; margin-top: 20px; }
+.footer strong { color: var(--verde); }
+
+/* ===== VENTANA DE LOGIN (prototipo) ===== */
+.modal {
+  position: fixed; inset: 0; background: rgba(15,23,42,.7);
+  display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal.oculto { display: none; } /* este orden es clave: oculta el login */
+.modal-contenido {
+  background: var(--blanco); border-radius: 14px; padding: 35px; width: 90%;
+  max-width: 380px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+.modal-contenido h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.modal-contenido h2 strong { color: var(--verde); }
+.modal-contenido .campo { display: block; margin-bottom: 15px; font-size: .85rem; color: var(--texto-suave); }
+.modal-cerrar {
+  position: absolute; top: 12px; right: 18px; font-size: 1.8rem; cursor: pointer;
+  color: var(--texto-suave); line-height: 1;
+}
+.modal-cerrar:hover { color: var(--rojo); }
+.mensaje-exito {
+  margin-top: 12px; padding: 10px; background: var(--gris-claro);
+  color: var(--verde-oscuro); border-radius: 8px; font-size: .9rem; font-weight: 600;
+}

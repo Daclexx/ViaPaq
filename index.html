@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViaPaq - Rutas y Encomiendas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BARRA SUPERIOR ===== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="logo">Via<strong>Paq</strong></div>
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#rutas">Rutas</a>
+        <a href="#encomiendas">Encomiendas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-secundario" onclick="abrirLogin()">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <!-- ===== BUSCADOR / PORTADA ===== -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <h1>Viaja entre municipios,<br><span>sin complicaciones.</span></h1>
+      <p>Busca rutas de bus, horarios y envía encomiendas con rastreo en tiempo real.</p>
+
+      <div class="buscador">
+        <div class="campo">
+          <label>Origen</label>
+          <select id="origen">
+            <option>San Pedro</option>
+            <option>La Esperanza</option>
+            <option>Villa Nueva</option>
+            <option>El Progreso</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label>Destino</label>
+          <select id="destino">
+            <option>La Esperanza</option>
+            <option>San Pedro</option>
+            <option>El Progreso</option>
+            <option>Villa Nueva</option>
+          </select>
+        </div>
+        <button class="btn-primario" onclick="buscarRutas()">Buscar rutas</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RUTAS DISPONIBLES ===== -->
+  <section id="rutas" class="seccion">
+    <div class="container">
+      <h2>Rutas disponibles <span class="badge">Modo demostración</span></h2>
+      <div id="lista-rutas" class="grilla-rutas"></div>
+    </div>
+  </section>
+
+  <!-- ===== ENCOMIENDAS / SEGUIMIENTO ===== -->
+  <section id="encomiendas" class="seccion fondo-claro">
+    <div class="container">
+      <h2>Seguimiento de encomienda <span class="badge">Modo demostración</span></h2>
+      <p class="sub">Escribe un número de guía de ejemplo (ej: VIA-1234) y mira la simulación del rastreo.</p>
+
+      <div class="buscador">
+        <div class="campo">
+          <label>Número de guía</label>
+          <input id="guia" type="text" placeholder="Ej: VIA-1234">
+        </div>
+        <button class="btn-primario" onclick="rastrear()">Rastrear</button>
+      </div>
+
+      <div id="resultado" class="resultado oculto">
+        <div class="cabecera-resultado">
+          <h3>Guía <span id="guia-mostrada"></span></h3>
+          <span id="estado-paquete" class="estado">En camino</span>
+        </div>
+        <div class="barra-progreso">
+          <div id="progreso" class="progreso-nivel"></div>
+        </div>
+        <ul id="pasos">
+          <li class="hecho">Recogido en San Pedro</li>
+          <li class="hecho">En tránsito hacia La Esperanza</li>
+          <li id="paso3">Llegada estimada: hoy 6:00 PM</li>
+        </ul>
+      </div>
+
+      <!-- ===== MAPA (prototipo) ===== -->
+      <div class="mapa">
+        <p>Mapa de rastreo en tiempo real</p>
+        <div class="ruta-dibujo">
+          <div class="punto inicio">Origen</div>
+          <div class="linea">
+            <div class="bus-moviendo" id="bus-mapa">🚌</div>
+          </div>
+          <div class="punto fin">Destino</div>
+        </div>
+        <small>* Prototipo: el mapa real (Google Maps) se integrará en etapas posteriores del proyecto.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HORARIOS (tabla) ===== -->
+  <section id="horarios" class="seccion">
+    <div class="container">
+      <h2>Horarios de salida <span class="badge">Datos de ejemplo</span></h2>
+      <table class="tabla">
+        <thead>
+          <tr><th>Ruta</th><th>Salida</th><th>Llegada</th><th>Duración</th><th>Precio</th></tr>
+        </thead>
+        <tbody id="cuerpo-horarios"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer id="contacto" class="footer">
+    <div class="container">
+      <p><strong>ViaPaq</strong> — Rutas confiables, entregas seguras.</p>
+      <p>Contacto: hola@viapaq.com</p>
+      <p>Proyecto académico - prototipo (primer año de Ingeniería en Sistemas)</p>
+    </div>
+  </footer>
+
+  <!-- ===== VENTANA DE LOGIN (solo diseño, sin base de datos) ===== -->
+  <div id="login-modal" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="modal-cerrar" onclick="cerrarLogin()">&times;</span>
+      <h2>Bienvenido a Via<strong>Paq</strong></h2>
+      <p class="sub">Prototipo: el inicio de sesión real se implementará con base de datos más adelante.</p>
+
+      <label class="campo">
+        Usuario o correo
+        <input type="text" id="login-usuario" placeholder="ejemplo@correo.com">
+      </label>
+      <label class="campo">
+        Contraseña
+        <input type="password" id="login-password" placeholder="••••••••">
+      </label>
+
+      <button class="btn-primario btn-ancho" onclick="ingresarDemo()">Ingresar (demo)</button>
+      <p id="login-mensaje" class="oculto mensaje-exito"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
