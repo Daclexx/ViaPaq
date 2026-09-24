@@ -2,7 +2,7 @@
 const rutas = [
   { origen: "Somoto", destino: "Matagalpa", salida: "8:00 AM", llegada: "9:00 AM", duracion: "1h" },
   { origen: "Esteli", destino: "Somoto", salida: "8:30 AM", llegada: "10:00 AM", duracion: "1h 30m" },
-  { origen: "Ocotal", destino: "Pueblo Nuevo", salida: "9:00 AM", llegada: "10:15 AM", duracion: "1h 15m" },
+  { origen: "Ocotal", destino: "Pueblo nuevo", salida: "9:00 AM", llegada: "10:15 AM", duracion: "1h 15m" },
   { origen: "Jalapa", destino: "Esteli", salida: "10:00 AM", llegada: "11:30 AM", duracion: "1h 30m" },
   { origen: "Esteli", destino: "Ocotal", salida: "9:30 AM", llegada: "10:45 AM", duracion: "1h 15m" },
   { origen: "Somoto", destino: "Jalapa", salida: "11:00 AM", llegada: "12:15 PM", duracion: "1h 15m" }
@@ -18,7 +18,6 @@ function mostrarRutas(inicio = "") {
         <h3>${r.origen} → ${r.destino}</h3>
         <p>Salida: ${r.salida} · Llegada: ${r.llegada}</p>
         <p class="duracion">⏱ ${r.duracion}</p>
-        <p class="precio">💰 ${r.precio}</p>
       </div>`;
   });
 }
@@ -42,7 +41,6 @@ function buscarRutas() {
           <h3>${r.origen} → ${r.destino}</h3>
           <p>Salida: ${r.salida} · Llegada: ${r.llegada}</p>
           <p class="duracion">⏱ ${r.duracion}</p>
-          <p class="precio">💰 ${r.precio}</p>
         </div>`;
     });
     document.getElementById("rutas").scrollIntoView({ behavior: "smooth" });
@@ -93,7 +91,6 @@ rutas.forEach(r => {
       <td>${r.salida}</td>
       <td>${r.llegada}</td>
       <td>${r.duracion}</td>
-      <td>${r.precio}</td>
     </tr>`;
 });
 
