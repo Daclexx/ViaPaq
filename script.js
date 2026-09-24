@@ -1,11 +1,11 @@
 /* ===== DATOS DE PRUEBA ===== */
 const rutas = [
-  { origen: "San Pedro", destino: "La Esperanza", salida: "8:00 AM", llegada: "9:00 AM", duracion: "1h", precio: "$2.50" },
-  { origen: "San Pedro", destino: "Villa Nueva", salida: "8:30 AM", llegada: "10:00 AM", duracion: "1h 30m", precio: "$3.00" },
-  { origen: "La Esperanza", destino: "San Pedro", salida: "9:00 AM", llegada: "10:15 AM", duracion: "1h 15m", precio: "$2.50" },
-  { origen: "La Esperanza", destino: "El Progreso", salida: "10:00 AM", llegada: "11:30 AM", duracion: "1h 30m", precio: "$3.50" },
-  { origen: "Villa Nueva", destino: "El Progreso", salida: "9:30 AM", llegada: "10:45 AM", duracion: "1h 15m", precio: "$3.20" },
-  { origen: "El Progreso", destino: "Villa Nueva", salida: "11:00 AM", llegada: "12:15 PM", duracion: "1h 15m", precio: "$3.20" }
+  { origen: "Somoto", destino: "Matagalpa", salida: "8:00 AM", llegada: "10:00 AM", duracion: "2h", precio: "$4.00" },
+  { origen: "Somoto", destino: "Pueblo nuevo", salida: "8:30 AM", llegada: "9:15 AM", duracion: "45m", precio: "$2.00" },
+  { origen: "Esteli", destino: "Matagalpa", salida: "9:00 AM", llegada: "11:00 AM", duracion: "2h", precio: "$4.50" },
+  { origen: "Esteli", destino: "Pueblo nuevo", salida: "11:00 AM", llegada: "11:40 AM", duracion: "40m", precio: "$1.50" },
+  { origen: "Ocotal", destino: "Somoto", salida: "10:00 AM", llegada: "11:30 AM", duracion: "1h 30m", precio: "$3.00" },
+  { origen: "Jalapa", destino: "Esteli", salida: "9:30 AM", llegada: "12:00 PM", duracion: "2h 30m", precio: "$5.00" }
 ];
 
 /* ===== MOSTRAR TODAS LAS RUTAS ===== */
